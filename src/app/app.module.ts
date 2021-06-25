@@ -1,10 +1,16 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from './app.component';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+//componete principal
+import { AppComponent } from './app.component';
+import { AppRoute } from './app.route';
+
 // Angular Material Theme
-import { AngularMaterialModule } from './module/angular-material.module';
+import { AngularMaterialModule } from './theme/angular-material.module';
+
 
 @NgModule({
   declarations: [
@@ -13,7 +19,11 @@ import { AngularMaterialModule } from './module/angular-material.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AngularMaterialModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    AngularMaterialModule,
+    AppRoute,
   ],
   providers: [],
   bootstrap: [AppComponent],

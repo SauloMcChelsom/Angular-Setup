@@ -1,7 +1,7 @@
 import { Component, ViewChild, HostListener } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { OverlayContainer } from '@angular/cdk/overlay';
-
+import { BreakpointObserver } from '@angular/cdk/layout';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,11 +10,24 @@ import { OverlayContainer } from '@angular/cdk/overlay';
 
 export class AppComponent {
 
+  ngAfterViewInit() {
+    this.observer.observe(['(max-width: 800px)']).subscribe((res) => {
+      if (res.matches) {
+        this.sidenav.mode = 'over';
+        this.sidenav.close();
+      } else {
+        this.sidenav.mode = 'side';
+        this.sidenav.open();
+      }
+    });
+  }
+
+
   themeColor: 'primary' | 'accent' | 'warn' = 'primary'; // ? notice this
   isDark = false; // ? notice this
   
 
-  constructor(private overlayContainer: OverlayContainer) {}
+  constructor(private overlayContainer: OverlayContainer,private observer: BreakpointObserver) {}
   
   opened = true;
   @ViewChild('sidenav', { static: true }) sidenav: MatSidenav
