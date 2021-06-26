@@ -1,12 +1,41 @@
 <div>
     Home
+    <div class="example-container">
+      <mat-form-field  appearance="outline">
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Placeholder">
+      </mat-form-field>
+    </div>
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    <mat-radio-group  aria-label="Select an option">
+      <mat-radio-button value="1">Option 1</mat-radio-button>
+      <mat-radio-button value="2">Option 2</mat-radio-button>
+    </mat-radio-group>
+    <mat-slide-toggle>Slide me!</mat-slide-toggle>
+    <mat-tab-group>
+      <mat-tab label="First"> Content 1 </mat-tab>
+      <mat-tab label="Second"> Content 2 </mat-tab>
+      <mat-tab label="Third"> Content 3 </mat-tab>
+    </mat-tab-group>
+    
 </div> 
 
 <loading></loading>
 
 <section>
-    <div class="example-label">Basic</div>
-    <div class="example-button-row">
-      <button mat-button color="primary">Primary</button>
-    </div>
+  <div class="example-button-row">
+    <button mat-raised-button>Basic</button>
+    <button mat-raised-button color="primary">Primary</button>
+    <button mat-raised-button color="accent">Accent</button>
+    <button mat-raised-button color="warn">Warn</button>
+    <button mat-raised-button disabled>Disabled</button>
+    <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
+  </div>
 </section>
+
+<mat-progress-bar  mode="indeterminate"></mat-progress-bar>
+

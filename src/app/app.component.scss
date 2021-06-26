@@ -1,22 +1,3 @@
-.box-container{
-    width: 99%;
-    margin: 0;
-    padding: 0;
-    height: calc(100vh - 10px);
-    border: dashed 0px rgb(255, 0, 0); 
-
-    padding: 0px;
-}
-
-.box{
-    text-align: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    border-radius: 4px;
-    box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
-    background-color: #ffffff; 
-}
-
 mat-toolbar {
     background: #004a9f;
     color: white;
