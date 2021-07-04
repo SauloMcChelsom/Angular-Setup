@@ -1,11 +1,31 @@
 <div>
-    Home
-    <div class="example-container">
-      <mat-form-field  appearance="outline">
-        <mat-label>Nome</mat-label>
-        <input matInput placeholder="Placeholder">
-      </mat-form-field>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4">
+          <mat-form-field appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="Qual seu nome">
+          </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <mat-form-field appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="Qual seu nome">
+          </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <mat-form-field appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="Qual seu nome">
+          </mat-form-field>
+        </div>
+      </div>
     </div>
+
+
+
     <button mat-button [matMenuTriggerFor]="menu">Menu</button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item>Item 1</button>
