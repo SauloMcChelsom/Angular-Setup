@@ -2,6 +2,7 @@ import { Component, ViewChild, HostListener } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { BreakpointObserver } from '@angular/cdk/layout';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,6 +10,12 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 })
 
 export class AppComponent {
+
+  public  theme$ = 'black-theme';
+  public  themeColor: 'primary' | 'accent' | 'warn' = 'primary';
+
+
+  //black-theme / nature-theme / default-theme / light-theme
 
   ngAfterViewInit() {
     this.observer.observe(['(max-width: 800px)']).subscribe((res) => {
@@ -21,10 +28,6 @@ export class AppComponent {
       }
     });
   }
-
-
-  themeColor: 'primary' | 'accent' | 'warn' = 'primary'; // ? notice this
-  isDark = false; // ? notice this
   
 
   constructor(private overlayContainer: OverlayContainer,private observer: BreakpointObserver) {}
@@ -32,46 +35,5 @@ export class AppComponent {
   opened = true;
   @ViewChild('sidenav', { static: true }) sidenav: MatSidenav
 
-  ngOnInit() {
-    console.log(window.innerWidth)
-    if (window.innerWidth < 768) {
-      this.sidenav.fixedTopGap = 55;
-      this.opened = false;
-    } else {
-      this.sidenav.fixedTopGap = 55;
-      this.opened = true;
-    }
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event:any) {
-    if (event.target.innerWidth < 768) {
-      this.sidenav.fixedTopGap = 55;
-      this.opened = false;
-    } else {
-      this.sidenav.fixedTopGap = 55
-      this.opened = true;
-    }
-  }
-
-  isBiggerScreen() {
-    const width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    if (width < 768) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-  
-  toggleTheme(): void {
-    this.isDark = !this.isDark;
-    if (this.isDark) {
-      this.overlayContainer.getContainerElement().classList.add('dark-theme');
-    } else {
-      this.overlayContainer
-        .getContainerElement()
-        .classList.remove('dark-theme');
-    }
-  }
-
+  ngOnInit() {}
 }

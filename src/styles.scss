@@ -1,19 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
-@import "@angular/material/prebuilt-themes/indigo-pink.css";
+@use '~@angular/material' as mat;
 
-html,
-body {
-    height: 100%;
-}
-body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+@import '~bootstrap/scss/bootstrap-reboot';
+@import '~bootstrap/scss/bootstrap-grid';
+
+@import 'styles-reset';
+@import 'styles-variables';
+
+@include mat.core();
+
+@import './themes/default-theme';
+@import './themes/light-theme';
+@import './themes/black-theme';
+@import './themes/nature-theme';
+
+@import './app/app-theme.component';
+
+
+@mixin custom-components-theme($theme) {
+  @include styles-reset($theme);
+  @include styles-variables($theme);
+  @include app-theme($theme);
 }
 
-h1,
-h2,
-h3,
-h4,
-p {
-    margin: 0;
+.default-theme {
+  @include mat.all-component-themes($anms-theme);
+  @include custom-components-theme($anms-theme);
+}
+
+.light-theme {
+  @include mat.all-component-themes($anms-light-theme);
+  @include custom-components-theme($anms-light-theme);
+}
+
+.black-theme {
+  @include mat.all-component-themes($anms-black-theme);
+  @include custom-components-theme($anms-black-theme);
+}
+
+.nature-theme {
+  @include mat.all-component-themes($anms-nature-theme);
+  @include custom-components-theme($anms-nature-theme);
 }

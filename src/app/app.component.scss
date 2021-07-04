@@ -1,33 +1,29 @@
-mat-toolbar {
-    background: #004a9f;
-    color: white;
-}
+@import '../styles-variables';
 
 mat-sidenav {
-    margin: 16px;
+    margin: 0px;
     width: 200px;
     border-right: none;
-    border-radius: 10px;
-    padding: 16px;
+    border-radius: 0px;
+    padding: 0px;
     text-align: center;
 }
 
 .content {
-    height: calc(100vh - 98px);
-    border-radius: 10px;
-    margin: 16px;
-    margin-left: 32px;
+    height: calc(100vh - 64px);
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+}
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 2rem;
-    color: lightgray;
+@media screen and (max-width: 599px){
+    .content {
+        height: calc(100vh - 56px);
+    }
 }
 
 mat-sidenav-container {
-    height: calc(100vh - 65px);
+    height: 100%;
 }
 
 .menu-button {
@@ -36,28 +32,10 @@ mat-sidenav-container {
     align-items: center;
     justify-content: flex-start;
     font-size: 1rem;
-
+    border-radius: 0px;
     mat-icon {
         margin-right: 8px;
     }
-}
-
-.avatar {
-    margin-top: 16px;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-}
-
-.name {
-    margin-top: 8px;
-    font-weight: normal;
-}
-
-.designation {
-    margin-top: 2px;
-    font-size: 0.7rem;
-    color: lightgrey;
 }
 
 mat-divider {

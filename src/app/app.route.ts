@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 export const ROUTES: Routes = [
   {
     path: '',
-    loadChildren: () => import('./page/user/_home/_home.module').then(m => m.HomeModule) 
+    redirectTo: 'about',
+    pathMatch: 'full'
   },
   {
     path: 'home',
@@ -14,10 +15,21 @@ export const ROUTES: Routes = [
     path: 'about',
     loadChildren: () => import('./page/user/about/about.module').then(m => m.AboutModule) 
   },
+  {
+    path: '**',
+    redirectTo: 'about'
+  }
 ];
 
+
 @NgModule({
-  imports: [RouterModule.forRoot(ROUTES)],
+  imports: [
+    RouterModule.forRoot(ROUTES, {
+      scrollPositionRestoration: 'enabled',
+      preloadingStrategy: PreloadAllModules,
+      relativeLinkResolution: 'legacy'
+    })
+  ],
   exports: [RouterModule]
 })
 export class AppRoute {}

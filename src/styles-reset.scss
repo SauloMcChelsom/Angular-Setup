@@ -1,0 +1,59 @@
+@use '~@angular/material' as mat;
+
+@mixin styles-reset($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $foreground: map-get($theme, foreground);
+
+  //reset material
+  a {
+    color: mat.get-color-from-palette($foreground, text);
+
+    &:hover {
+      color: mat.get-color-from-palette($accent);
+    }
+  }
+
+  code {
+    color: mat.get-color-from-palette($accent, lighter-contrast);
+    background-color: mat.get-color-from-palette($accent, lighter);
+  }
+
+  p {
+    a {
+      color: mat.get-color-from-palette($accent);
+
+      &:hover {
+        color: mat.get-color-from-palette($accent, darker);
+      }
+    }
+  }
+
+  //reset css
+  * {
+    &:active,
+    :focus {
+      outline: none !important;
+    }
+  }
+  
+  code {
+    white-space: nowrap;
+    border-radius: 10px;
+    padding: 0 8px 1px 8px;
+  }
+  
+  .mat-menu-content {
+    fa-icon {
+      position: relative;
+      top: 2px;
+      left: 4px;
+    }
+  }
+  
+  p {
+    a {
+      border-bottom: 3px solid;
+    }
+  }
+}
