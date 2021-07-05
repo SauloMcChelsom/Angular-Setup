@@ -34,6 +34,18 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {A11yModule} from '@angular/cdk/a11y';
+import {ClipboardModule} from '@angular/cdk/clipboard';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import {CdkStepperModule} from '@angular/cdk/stepper';
+import {CdkTableModule} from '@angular/cdk/table';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatOptionModule} from '@angular/material/core';
 
 const materialModules = [
   CdkTreeModule,
@@ -69,7 +81,19 @@ const materialModules = [
   MatGridListModule,
   MatRadioModule,
   MatDatepickerModule,
-  MatTooltipModule
+  MatTooltipModule,
+  A11yModule,
+  ClipboardModule,
+  DragDropModule,
+  ScrollingModule,
+  CdkStepperModule,
+  CdkTableModule,
+  MatBottomSheetModule,
+  MatStepperModule,
+  MatDialogModule,
+  MatSliderModule,
+  MatNativeDateModule,
+  MatOptionModule
 ];
 
 @NgModule({

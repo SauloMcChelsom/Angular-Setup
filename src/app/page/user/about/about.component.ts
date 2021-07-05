@@ -1,10 +1,5 @@
-import { Component } from '@angular/core';
-
-
-interface Food {
-  value: string;
-  viewValue: string;
-}
+import { Component, OnInit, OnDestroy, Input, Output, EventEmitter, Directive, ViewChild } from '@angular/core'
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'about-user',
@@ -14,13 +9,15 @@ interface Food {
 export class AboutComponent {
 
 
-  constructor() {
-    console.log('about')
+  constructor() {}
+
+  public formulario: FormGroup = new FormGroup({
+    matricula: new FormControl(null,Validators.required),
+    endereco: new FormControl(null,Validators.required),
+  });
+
+  public consulta(){
+    
   }
 
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
 }
