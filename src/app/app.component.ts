@@ -11,8 +11,8 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 
 export class AppComponent {
 
-  public  theme$ = 'default-theme';
-  public  themeColor: 'primary' | 'accent' | 'warn' = 'primary';
+  public  theme$ = 'nature-theme';
+  public  themeColor: 'primary' | 'accent' | 'warn' = 'accent';
 
 
   //black-theme / nature-theme / default-theme / light-theme

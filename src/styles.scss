@@ -19,6 +19,13 @@
 @mixin custom-components-theme($theme) {
   @include styles-reset($theme);
   @include styles-variables($theme);
+  @include styles-variables-nature($theme);
+  @include app-theme($theme);
+}
+
+@mixin custom-components-theme-nature($theme) {
+  @include styles-variables-nature($theme);
+  @include styles-reset($theme);
   @include app-theme($theme);
 }
 
@@ -37,7 +44,7 @@
   @include custom-components-theme($anms-black-theme);
 }
 
-.nature-theme {
+.nature-theme { 
   @include mat.all-component-themes($anms-nature-theme);
-  @include custom-components-theme($anms-nature-theme);
+  @include custom-components-theme-nature($anms-black-theme);
 }

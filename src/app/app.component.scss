@@ -2,7 +2,7 @@
 
 mat-sidenav {
     margin: 0px;
-    width: 200px;
+    width: 240px;
     border-right: none;
     border-radius: 0px;
     padding: 0px;
@@ -33,9 +33,14 @@ mat-sidenav-container {
     justify-content: flex-start;
     font-size: 1rem;
     border-radius: 0px;
+    margin-top: 15px;
     mat-icon {
         margin-right: 8px;
     }
+}
+
+.button-menu {
+    padding: 10px 16px
 }
 
 mat-divider {
