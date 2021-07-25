@@ -113,19 +113,20 @@ $black-theme: mat.define-dark-theme(
 );
 
 @mixin styles-variables-black($theme) {
-  $background-head: mat.get-color-from-palette($black-accent, 300);
-  $background-manu: mat.get-color-from-palette($black-accent, 300);
-  $background-content: mat.get-color-from-palette($black-accent, 300);
-  $background-foot: mat.get-color-from-palette($black-accent, 300);
+  $background-head: mat.get-color-from-palette($black-accent, A200);
+  $background-manu: mat.get-color-from-palette($black-accent, A200);
+  $background-content: mat.get-color-from-palette($black-accent, A200);
+  $background-foot: mat.get-color-from-palette($black-accent, A200);
 
   $primary-set: mat.get-color-from-palette($black-primary, 500);
-  $secondary-set: mat.get-color-from-palette($black-accent, 100);
+  $secondary-set: mat.get-color-from-palette($black-accent, A100);
   $accent-set: mat.get-color-from-palette($black-accent, 400);
   $inverse-set: $accent-set;
-  $disabled-set: mat.get-color-from-palette($black-accent, 600);
+  $disabled-set: mat.get-color-from-palette($black-accent, 800);
   $enabled-set: $accent-set;
   $active-set: $primary-set;
-  $passive-set: mat.get-color-from-palette($black-accent, 600);
+  $passive-set: mat.get-color-from-palette($black-accent, 400);
+  $border-line: mat.get-color-from-palette($black-accent, 400);
 
   .error-notification-overlay {
     color: mat.get-color-from-palette($warn, default-contrast);
@@ -174,7 +175,7 @@ $black-theme: mat.define-dark-theme(
 
   .menu-theme {
     background-color: $background-manu;
-    border-right: solid 1px $passive-set !important;
+    border-right: solid 1px $border-line !important;
   }
 
   .content-theme {
