@@ -29,6 +29,12 @@
   @include app-theme($theme);
 }
 
+@mixin custom-components-theme-black($theme) {
+  @include styles-variables-black($theme);
+  @include styles-reset($theme);
+  @include app-theme($theme);
+}
+
 .default-theme {
   @include mat.all-component-themes($anms-theme);
   @include custom-components-theme($anms-theme);
@@ -40,11 +46,11 @@
 }
 
 .black-theme {
-  @include mat.all-component-themes($anms-black-theme);
-  @include custom-components-theme($anms-black-theme);
+  @include mat.all-component-themes($black-theme);
+  @include custom-components-theme-black($black-theme);
 }
 
 .nature-theme { 
   @include mat.all-component-themes($anms-nature-theme);
-  @include custom-components-theme-nature($anms-black-theme);
+  @include custom-components-theme-nature($anms-nature-theme);
 }

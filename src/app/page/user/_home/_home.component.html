@@ -1,5 +1,13 @@
 
 <div class="container">
+  <span class="text-primary">primary</span><br/>
+  <span class="text-secondary">secondary</span><br/>
+  <span class="text-accent">accent</span><br/>
+  <span class="text-inverse">inverse</span><br/>
+  <span class="text-disabled">disabled</span><br/>
+  <span class="text-enabled">enabled</span><br/>
+  <span class="texts-menu">menu</span><br/>
+
   <div class="row">
     <div class="col-12 col-md-6 col-lg-4">
       <mat-form-field appearance="outline" [formGroup]="formulario">
@@ -25,12 +33,12 @@
     </div>
     <div class="col-12 col-md-6 col-lg-4">
       <mat-radio-group class="d-flex flex-column" aria-label="Select an option">
-        <mat-radio-button value="1">Masculino</mat-radio-button>
-        <mat-radio-button value="2">Feminino</mat-radio-button>
+        <mat-radio-button value="1"><span class="text-accent">Masculino</span></mat-radio-button>
+        <mat-radio-button value="2"><span class="text-accent">Feminino</span></mat-radio-button>
       </mat-radio-group>
     </div>
     <div class="col-12 col-md-6 col-lg-4">
-      <mat-slide-toggle>Maiores de 18 anos</mat-slide-toggle>
+      <mat-slide-toggle><span class="text-accent">Maiores de 18 anos</span></mat-slide-toggle>
     </div>
     <div class="col-12 col-md-6 col-lg-4">
       <form class="example-form">

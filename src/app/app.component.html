@@ -1,20 +1,20 @@
 <div [class]="'theme-wrapper ' + theme$">
-  <mat-toolbar [color]="themeColor" class="mat-elevation-z2" style="margin-bottom: 3px;">
+  <mat-toolbar [color]="themeColor" class="mat-elevation-z2 head-theme" style="margin-bottom: 0px;">
      
     <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
-        <mat-icon *ngIf="!sidenav.opened">
+        <mat-icon class="icons-menu" *ngIf="!sidenav.opened">
             menu
         </mat-icon>
-        <mat-icon *ngIf="sidenav.opened">
+        <mat-icon class="icons-menu" *ngIf="sidenav.opened">
             close
         </mat-icon>
     </button>
 
     <button mat-icon-button *ngIf="sidenav.mode === 'side'" (click)="sidenav.toggle()">
-        <mat-icon *ngIf="sidenav.opened">
+        <mat-icon class="icons-menu" *ngIf="sidenav.opened">
             menu
         </mat-icon>
-        <mat-icon *ngIf="!sidenav.opened">
+        <mat-icon class="icons-menu" *ngIf="!sidenav.opened">
             menu
         </mat-icon>
     </button>
@@ -22,33 +22,33 @@
   </mat-toolbar>
   
   <mat-sidenav-container>
-    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z1 background-primary-theme" style="border-right: solid 0px">
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z1 menu-theme" style="border-right: solid 0px">
   
         <button routerLink="home" routerLinkActive="active" mat-button class="menu-button button-menu">
-            <mat-icon>home</mat-icon>
-            <span>Home</span>
+            <mat-icon class="icons-menu">home</mat-icon>
+            <span class="texts-menu">Home</span>
         </button>
 
         <button mat-button class="menu-button button-menu">
-            <mat-icon>person</mat-icon>
-            <span>Profile</span>
+            <mat-icon class="icons-menu">person</mat-icon>
+            <span class="texts-menu">Profile</span>
         </button>
 
         <button routerLink="about" routerLinkActive="active" mat-button class="menu-button button-menu">
-            <mat-icon>info</mat-icon>
-            <span>About</span>
+            <mat-icon class="icons-menu">info</mat-icon>
+            <span class="texts-menu">About</span>
         </button>
 
         <mat-divider></mat-divider>
 
         <button mat-button class="menu-button button-menu">
-            <mat-icon>help</mat-icon>
-            <span>Help</span>
+            <mat-icon class="icons-menu">help</mat-icon>
+            <span class="texts-menu">Help</span>
         </button>
   
     </mat-sidenav>
     <mat-sidenav-content>
-        <div class="content background-primary-theme">
+        <div class="content content-theme">
             <router-outlet></router-outlet>
         </div>
     </mat-sidenav-content>
