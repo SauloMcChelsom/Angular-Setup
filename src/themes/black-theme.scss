@@ -112,7 +112,6 @@ $black-theme: mat.define-dark-theme(
   $black-warn
 );
 
-
 @mixin styles-variables-black($theme) {
   $background-head: mat.get-color-from-palette($black-accent, 300);
   $background-manu: mat.get-color-from-palette($black-accent, 300);

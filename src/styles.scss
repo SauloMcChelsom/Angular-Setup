@@ -51,6 +51,6 @@
 }
 
 .nature-theme { 
-  @include mat.all-component-themes($anms-nature-theme);
-  @include custom-components-theme-nature($anms-nature-theme);
+  @include mat.all-component-themes($nature-theme);
+  @include custom-components-theme-nature($nature-theme);
 }

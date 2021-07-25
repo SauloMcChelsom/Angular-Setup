@@ -1,8 +1,8 @@
 @use '~@angular/material' as mat;
 
 // define a real custom palette (using http://mcg.mbitson.com)
-$verde: (
-    50 : #e3f2fd,
+$primary: (
+    50 : #f0f2f5,
     100 : #bbdefb,
     200 : #90caf9,
     300 : #64b5f6,
@@ -34,7 +34,7 @@ $verde: (
     )
 );
 
-$roxo: (
+$accent: (
     50 : #fafafa,
     100 : #f5f5f5,
     200 : #eeeeee,
@@ -67,7 +67,7 @@ $roxo: (
     )
 );
 
-$amarelo: (
+$warn: (
     50 : #ffebee,
     100 : #ffcdd2,
     200 : #ef9a9a,
@@ -100,37 +100,37 @@ $amarelo: (
     )
 );
 
-
-$anms-nature-primary: mat.define-palette($verde);
-$anms-nature-accent: mat.define-palette($roxo);
-$anms-nature-warn: mat.define-palette($amarelo);
-
-$anms-nature-theme: mat.define-light-theme(
-  $anms-nature-primary,
-  $anms-nature-accent,
-  $anms-nature-warn
-);
-
-/*
-*
-*/
-
 $success-colors: mat.define-palette(mat.$green-palette, 400);
 $warning-colors: mat.define-palette(mat.$amber-palette, 400);
+$nature-primary: mat.define-palette($primary);
+$nature-accent: mat.define-palette($accent);
+$nature-warn: mat.define-palette($warn);
+ 
+$nature-theme: mat.define-light-theme(
+  $nature-primary,
+  $nature-accent,
+  $nature-warn
+);
 
 @mixin styles-variables-nature($theme) {
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  $warn: map-get($theme, warn);
-  
-  .active {
-    color: mat.get-color-from-palette($anms-nature-primary, 500);
-    background-color: mat.get-color-from-palette($anms-nature-accent, 300);
-  }
-  
+  $background-head: mat.get-color-from-palette($nature-accent, 300);
+  $background-manu: mat.get-color-from-palette($nature-primary, 50);
+  $background-content: mat.get-color-from-palette($nature-primary, 50);
+  $background-foot: mat.get-color-from-palette($nature-accent, 300);
+
+  $primary-set: mat.get-color-from-palette($nature-primary, 500);
+  $secondary-set: mat.get-color-from-palette($nature-accent, A200);
+  $accent-set: mat.get-color-from-palette($nature-accent, 600);
+  $inverse-set: $accent-set;
+  $disabled-set: mat.get-color-from-palette($nature-accent, 400);
+  $enabled-set: $accent-set;
+  $active-set: $primary-set;
+  $passive-set: mat.get-color-from-palette($nature-accent, 800);
+  $border-line: mat.get-color-from-palette($nature-accent, 50);
+
   .error-notification-overlay {
     color: mat.get-color-from-palette($warn, default-contrast);
-    background-color: mat.get-color-from-palette($anms-nature-accent, 500);
+    background-color: mat.get-color-from-palette($nature-accent, 500);
   }
 
   .info-notification-overlay {
@@ -149,32 +149,87 @@ $warning-colors: mat.define-palette(mat.$amber-palette, 400);
   }
 
   .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
-    border-color:mat.get-color-from-palette($anms-nature-primary, 500);
+    border-color:$primary-set;
   }
       
   .mat-radio-button.mat-accent .mat-radio-inner-circle{
-    color:mat.get-color-from-palette($anms-nature-primary, 500);
-    background-color:mat.get-color-from-palette($anms-nature-primary, 500);
+    color:$primary-set;
+    background-color:$primary-set;
   }
       
   .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
-    background-color:  mat.get-color-from-palette($anms-nature-primary, 500);
+    background-color:  $primary-set;
   }
 
   .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
-    background-color: mat.get-color-from-palette($anms-nature-primary, 300);
+    background-color: mat.get-color-from-palette($nature-primary, 300);
   }
 
   .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
-    background-color: mat.get-color-from-palette($anms-nature-primary, 500);
+    background-color: $primary-set;
   }
 
-  .background-primary-theme {
-    background-color: mat.get-color-from-palette($anms-nature-accent, 300);
+  .head-theme {
+    background-color: $background-head
   }
 
-  .head-primary-theme {
-    background-color: mat.get-color-from-palette($anms-nature-accent, 500);
+  .menu-theme {
+    background-color: $background-manu;
+    border-right: solid 1px $border-line !important;
   }
 
+  .content-theme {
+    background-color: $background-content;
+  }
+
+  .foot-theme {
+    background-color: $background-foot;
+  }
+
+  .text-primary {
+    color:  $primary-set;
+  }
+
+  .text-secondary {
+    color:  $secondary-set !important;
+  }
+  
+  .text-accent {
+    color:  $accent-set;
+  }
+
+  .text-inverse {
+    color:  $inverse-set;
+  }
+
+  .text-disabled {
+    color:  $disabled-set;
+  }
+
+  .text-enabled {
+    color:  $enabled-set;
+  }
+
+  .icons-menu {
+    color:  $passive-set;
+  }
+
+  .texts-menu {
+    color:  $passive-set;
+  }
+
+  .active .icons-menu  {
+    color: $primary-set;
+    background-color:$background-manu;
+  }
+
+  .active .texts-menu {
+    color: $primary-set;
+    background-color: $background-manu;
+  }
+
+  .active {
+    color: $primary-set;
+    background-color: $background-manu;
+  }
 }
