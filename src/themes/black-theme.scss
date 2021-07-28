@@ -170,7 +170,8 @@ $black-theme: mat.define-dark-theme(
   }
 
   .head-theme {
-    background-color: $background-head
+    background-color: $background-head;
+    border-bottom: 1px solid $border-line !important;
   }
 
   .menu-theme {

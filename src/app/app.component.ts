@@ -1,4 +1,4 @@
-import { Component, ViewChild, HostListener } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { BreakpointObserver } from '@angular/cdk/layout';
@@ -11,10 +11,7 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 
 export class AppComponent {
 
-  public  theme$ = 'black-theme';
-  public  themeColor: 'primary' | 'accent' | 'warn' = 'accent';
-
-
+  public  theme$ = 'black-theme'
   //black-theme / nature-theme / default-theme / light-theme
 
   ngAfterViewInit() {
