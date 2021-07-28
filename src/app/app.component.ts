@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { OverlayContainer } from '@angular/cdk/overlay';
 import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
@@ -11,8 +10,15 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 
 export class AppComponent {
 
+  @ViewChild('sidenav', { static: true }) 
+  public sidenav: MatSidenav
+
   public  theme$ = 'black-theme'
   //black-theme / nature-theme / default-theme / light-theme
+
+  constructor(private observer: BreakpointObserver) {}
+
+  ngOnInit() {}
 
   ngAfterViewInit() {
     this.observer.observe(['(max-width: 800px)']).subscribe((res) => {
@@ -25,12 +31,4 @@ export class AppComponent {
       }
     });
   }
-  
-
-  constructor(private overlayContainer: OverlayContainer,private observer: BreakpointObserver) {}
-  
-  opened = true;
-  @ViewChild('sidenav', { static: true }) sidenav: MatSidenav
-
-  ngOnInit() {}
 }

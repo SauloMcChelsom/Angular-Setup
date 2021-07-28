@@ -3,9 +3,6 @@
 @import '~bootstrap/scss/bootstrap-reboot';
 @import '~bootstrap/scss/bootstrap-grid';
 
-@import 'styles-reset';
-@import 'styles-variables';
-
 @include mat.core();
 
 @import './themes/default-theme';
@@ -13,36 +10,20 @@
 @import './themes/black-theme';
 @import './themes/nature-theme';
 
-@import './app/app-theme.component';
-
-
-@mixin custom-components-theme($theme) {
-  @include styles-reset($theme);
-  @include styles-variables($theme);
-  @include styles-variables-nature($theme);
-  @include app-theme($theme);
-}
-
 @mixin custom-components-theme-nature($theme) {
   @include styles-variables-nature($theme);
-  @include styles-reset($theme);
-  @include app-theme($theme);
 }
 
 @mixin custom-components-theme-black($theme) {
   @include styles-variables-black($theme);
-  @include styles-reset($theme);
-  @include app-theme($theme);
 }
 
 .default-theme {
   @include mat.all-component-themes($anms-theme);
-  @include custom-components-theme($anms-theme);
 }
 
 .light-theme {
   @include mat.all-component-themes($anms-light-theme);
-  @include custom-components-theme($anms-light-theme);
 }
 
 .black-theme {
