@@ -185,6 +185,7 @@ $black-theme: mat.define-dark-theme(
 
   .foot-theme {
     background-color: $background-foot;
+    border-top: 5px solid #e0e2e5 !important;
   }
 
   .text-primary {

@@ -13,7 +13,7 @@ export class AppComponent {
   @ViewChild('sidenav', { static: true }) 
   public sidenav: MatSidenav
 
-  public  theme$ = 'black-theme'
+  public  theme$ = 'nature-theme'
   //black-theme / nature-theme / default-theme / light-theme
 
   constructor(private observer: BreakpointObserver) {}
