@@ -9,6 +9,7 @@
 @import './themes/light-theme';
 @import './themes/black-theme';
 @import './themes/nature-theme';
+@import './google-fonts.scss';
 
 @mixin custom-components-theme-nature($theme) {
   @include styles-variables-nature($theme);
@@ -34,4 +35,5 @@
 .nature-theme { 
   @include mat.all-component-themes($nature-theme);
   @include custom-components-theme-nature($nature-theme);
+  @include google-fonts()
 }

@@ -1,66 +1,6 @@
-<!----
 <div [class]="'theme-wrapper ' + theme$">
-  <mat-toolbar class="head-theme app-toolbar">
-     
-    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
-        <mat-icon class="icons-menu" *ngIf="!sidenav.opened">
-            menu
-        </mat-icon>
-        <mat-icon class="icons-menu" *ngIf="sidenav.opened">
-            close
-        </mat-icon>
-    </button>
-
-    <button mat-icon-button *ngIf="sidenav.mode === 'side'" (click)="sidenav.toggle()">
-        <mat-icon class="icons-menu" *ngIf="sidenav.opened">
-            menu
-        </mat-icon>
-        <mat-icon class="icons-menu" *ngIf="!sidenav.opened">
-            menu
-        </mat-icon>
-    </button>
     
-  </mat-toolbar>
-  
-  <mat-sidenav-container>
-    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z1 menu-theme" style="border-right: solid 0px">
-  
-        <button routerLink="home" routerLinkActive="active" mat-button class="menu-button button-menu">
-            <mat-icon class="icons-menu">home</mat-icon>
-            <span class="texts-menu">Home</span>
-        </button>
-
-        <button mat-button class="menu-button button-menu">
-            <mat-icon class="icons-menu">person</mat-icon>
-            <span class="texts-menu">Profile</span>
-        </button>
-
-        <button routerLink="about" routerLinkActive="active" mat-button class="menu-button button-menu">
-            <mat-icon class="icons-menu">info</mat-icon>
-            <span class="texts-menu">About</span>
-        </button>
-
-        <mat-divider></mat-divider>
-
-        <button mat-button class="menu-button button-menu">
-            <mat-icon class="icons-menu">help</mat-icon>
-            <span class="texts-menu">Help</span>
-        </button>
-  
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <div class="content content-theme">
-            <router-outlet></router-outlet>
-        </div>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-</div>
-
--->
-
-<div [class]="'theme-wrapper ' + theme$">
     <mat-toolbar class="head-theme example-header app-toolbar">
-     
         <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
             <mat-icon class="icons-menu" *ngIf="!sidenav.opened">
                 menu
@@ -78,44 +18,57 @@
                 menu
             </mat-icon>
         </button>
-        
-      </mat-toolbar>
+    </mat-toolbar>
   
     <mat-sidenav-container class="example-container content-theme">
-        <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z1 menu-theme" style="border-right: solid 0px">
-  
-            <button routerLink="home" routerLinkActive="active" mat-button class="menu-button button-menu">
-                <mat-icon class="icons-menu">home</mat-icon>
-                <span class="texts-menu">Home</span>
-            </button>
-    
-            <button mat-button class="menu-button button-menu">
-                <mat-icon class="icons-menu">person</mat-icon>
-                <span class="texts-menu">Profile</span>
-            </button>
-    
-            <button routerLink="about" routerLinkActive="active" mat-button class="menu-button button-menu">
-                <mat-icon class="icons-menu">info</mat-icon>
-                <span class="texts-menu">About</span>
-            </button>
-    
-            <mat-divider></mat-divider>
-    
-            <button mat-button class="menu-button button-menu">
-                <mat-icon class="icons-menu">help</mat-icon>
-                <span class="texts-menu">Help</span>
-            </button>
-      
-        </mat-sidenav>
-  
-      <!------------------------------------------------>
-      <!----><mat-sidenav-content><!-------------------->
-      <!------><div class="content content-theme"><!---->
-      <!----------><router-outlet></router-outlet><!---->
-      <!------></div><!--------------------------------->
-      <!----></mat-sidenav-content><!------------------->
-      <!------------------------------------------------>
+        <!----------------------MENU-------------------------->
+        <!----><mat-sidenav #sidenav="matSidenav" class="mat-elevation-z1 menu-theme" style="border-right: solid 0px">
+        <!---->    <button routerLink="home" routerLinkActive="active" mat-button class="menu-button button-menu">
+        <!---->        <mat-icon class="material-icons-round icons-menu">home</mat-icon>
+        <!---->        <span class="texts-menu">Home</span>
+        <!---->    </button>
+        <!---->
+        <!---->    <button routerLink="angular-material-ui" routerLinkActive="active" mat-button class="menu-button button-menu">
+        <!---->        <mat-icon class="icons-menu">construction</mat-icon>
+        <!---->        <span class="texts-menu">Angular material ui</span>
+        <!---->    </button>
+        <!---->
+        <!---->    <button routerLink="loading" routerLinkActive="active" mat-button class="menu-button button-menu">
+        <!---->        <mat-icon class="icons-menu">cached</mat-icon>
+        <!---->        <span class="texts-menu">Loading</span>
+        <!---->    </button>
+        <!---->
+        <!---->    <button routerLink="forbidden" routerLinkActive="active" mat-button class="menu-button button-menu">
+        <!---->        <mat-icon class="icons-menu">no_encryption_gmailerrorred</mat-icon>
+        <!---->        <span class="texts-menu">Forbidden</span>
+        <!---->    </button>
+        <!---->
+        <!---->    <button routerLink="unauthorized" routerLinkActive="active" mat-button class="menu-button button-menu">
+        <!---->        <mat-icon class="icons-menu">error</mat-icon>
+        <!---->        <span class="texts-menu">Unauthorized</span>
+        <!---->    </button>
+        <!---->
+        <!---->    <button routerLink="page-not-found" routerLinkActive="active" mat-button class="menu-button button-menu">
+        <!---->        <mat-icon class="icons-menu">sms_failed</mat-icon>
+        <!---->        <span class="texts-menu">Page not found</span>
+        <!---->    </button>
+        <!---->
+        <!---->    <mat-divider></mat-divider>
+        <!---->
+        <!---->    <button mat-button class="menu-button button-menu">
+        <!---->        <mat-icon class="icons-menu">help</mat-icon>
+        <!---->        <span class="texts-menu">Help</span>
+        <!---->    </button>
+        <!----></mat-sidenav>
+        <!------------------------------------------------>
 
+        <!------------------CONTEUDOS------------------------------>
+        <!----><mat-sidenav-content><!-------------------->
+        <!------><div class="content content-theme"><!---->
+        <!----------><router-outlet></router-outlet><!---->
+        <!------></div><!--------------------------------->
+        <!----></mat-sidenav-content><!------------------->
+        <!------------------------------------------------>
     </mat-sidenav-container>
   
     <mat-toolbar  class="example-footer foot-theme">Footer</mat-toolbar>

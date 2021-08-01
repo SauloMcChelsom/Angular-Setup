@@ -4,7 +4,7 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 export const ROUTES: Routes = [
   {
     path: '',
-    redirectTo: 'about',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
@@ -12,12 +12,28 @@ export const ROUTES: Routes = [
     loadChildren: () => import('./page/user/_home/_home.module').then(m => m.HomeModule) 
   },
   {
-    path: 'about',
-    loadChildren: () => import('./page/user/about/about.module').then(m => m.AboutModule) 
+    path: 'angular-material-ui',
+    loadChildren: () => import('./component/angular-material-ui-component/angular-material-ui.module').then(m => m.AngularMaterialUIModule) 
+  },
+  {
+    path: 'loading',
+    loadChildren: () => import('./component/loading/loading.module').then(m => m.LoadingModule) 
+  },
+  {
+    path: 'forbidden',
+    loadChildren: () => import('./component/erros/forbidden/forbidden.module').then(m => m.ForbiddenModule) 
+  },
+  {
+    path: 'unauthorized',
+    loadChildren: () => import('./component/erros/unauthorized/unauthorized.module').then(m => m.UnauthorizedModule) 
+  },
+  {
+    path: 'page-not-found',
+    loadChildren: () => import('./component/erros/notfound/notfound.module').then(m => m.PageNotFoundModule) 
   },
   {
     path: '**',
-    redirectTo: 'about'
+    redirectTo: 'page-not-found'
   }
 ];
 
