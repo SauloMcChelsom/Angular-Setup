@@ -1,16 +1,22 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser'
+import { HttpClientModule } from '@angular/common/http'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { StoreDevtoolsModule } from '@ngrx/store-devtools'
+import { EffectsModule } from '@ngrx/effects'
+import { StoreModule } from '@ngrx/store'
 
-//componete principal
-import { AppComponent } from './app.component';
-import { AppRoute } from './app.route';
+import { AuthGuard } from '@app/core/guards/auth.guard'
+import { ScreenAccessPermissionGuard as ScreenGuard } from '@app/core/guards/screen-access-permission.guard';
+import { AuthService } from '@app/core/services/auth.service'
+import { AuthInterceptorService } from '@app/core/interceptor/auth.interceptor'
+import { LocalStorageTokenUtils } from '@app/core/utils/local-storege-token.utils';
 
-// Angular Material Theme
-import { AngularMaterialModule } from './theme/angular-material.module';
-
+import { AngularMaterialModule } from '@theme/angular-material.module'
+import { AppComponent } from '@app/app.component'
+import { AppRoute } from '@app/app.route'
 
 @NgModule({
   declarations: [
@@ -24,8 +30,21 @@ import { AngularMaterialModule } from './theme/angular-material.module';
     FormsModule,
     AngularMaterialModule,
     AppRoute,
+    EffectsModule.forRoot([]),
+    StoreModule.forRoot([]),
+    StoreDevtoolsModule.instrument({maxAge: 25}),
   ],
-  providers: [],
+  providers: [
+    AuthGuard, 
+    ScreenGuard, 
+    AuthService,
+    LocalStorageTokenUtils,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    },
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

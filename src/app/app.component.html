@@ -23,39 +23,40 @@
     <mat-sidenav-container class="example-container content-theme">
         <!----------------------MENU-------------------------->
         <!----><mat-sidenav #sidenav="matSidenav" class="mat-elevation-z1 menu-theme" style="border-right: solid 0px">
-        <!---->    <button routerLink="home" routerLinkActive="active" mat-button class="menu-button button-menu">
+        <!---->
+        <!---->    <button routerLink="feed" routerLinkActive="active" (click)="sideNavClose()" mat-button class="menu-button button-menu">
         <!---->        <mat-icon class="material-icons-round icons-menu">home</mat-icon>
-        <!---->        <span class="texts-menu">Home</span>
+        <!---->        <span class="texts-menu">Feed</span>
         <!---->    </button>
         <!---->
-        <!---->    <button routerLink="angular-material-ui" routerLinkActive="active" mat-button class="menu-button button-menu">
-        <!---->        <mat-icon class="icons-menu">construction</mat-icon>
-        <!---->        <span class="texts-menu">Angular material ui</span>
+        <!---->    <button routerLink="login" routerLinkActive="active" (click)="sideNavClose()" mat-button class="menu-button button-menu">
+        <!---->        <mat-icon class="material-icons-round icons-menu">home</mat-icon>
+        <!---->        <span class="texts-menu">Login</span>
         <!---->    </button>
-        <!---->
-        <!---->    <button routerLink="loading" routerLinkActive="active" mat-button class="menu-button button-menu">
-        <!---->        <mat-icon class="icons-menu">cached</mat-icon>
+        <!---->       
+        <!---->    <button routerLink="components" routerLinkActive="active" (click)="sideNavClose()" mat-button class="menu-button button-menu">
+        <!---->        <mat-icon class="material-icons-round icons-menu">home</mat-icon>
+        <!---->        <span class="texts-menu">Components</span>
+        <!---->    </button>
+        <!---->       
+        <!---->    <button routerLink="learn-angular" routerLinkActive="active" (click)="sideNavClose()" mat-button class="menu-button button-menu">
+        <!---->        <mat-icon class="material-icons-round icons-menu">home</mat-icon>
+        <!---->        <span class="texts-menu">Learn Angular</span>
+        <!---->    </button>
+        <!---->       
+        <!---->    <button routerLink="loading" routerLinkActive="active" (click)="sideNavClose()" mat-button class="menu-button button-menu">
+        <!---->        <mat-icon class="material-icons-round icons-menu">home</mat-icon>
         <!---->        <span class="texts-menu">Loading</span>
         <!---->    </button>
-        <!---->
-        <!---->    <button routerLink="forbidden" routerLinkActive="active" mat-button class="menu-button button-menu">
-        <!---->        <mat-icon class="icons-menu">no_encryption_gmailerrorred</mat-icon>
-        <!---->        <span class="texts-menu">Forbidden</span>
-        <!---->    </button>
-        <!---->
-        <!---->    <button routerLink="unauthorized" routerLinkActive="active" mat-button class="menu-button button-menu">
-        <!---->        <mat-icon class="icons-menu">error</mat-icon>
-        <!---->        <span class="texts-menu">Unauthorized</span>
-        <!---->    </button>
-        <!---->
-        <!---->    <button routerLink="page-not-found" routerLinkActive="active" mat-button class="menu-button button-menu">
-        <!---->        <mat-icon class="icons-menu">sms_failed</mat-icon>
-        <!---->        <span class="texts-menu">Page not found</span>
+        <!---->  
+        <!---->    <button routerLink="tutorial" routerLinkActive="active" (click)="sideNavClose()" mat-button class="menu-button button-menu">
+        <!---->        <mat-icon class="material-icons-round icons-menu">home</mat-icon>
+        <!---->        <span class="texts-menu">Tutorial</span>
         <!---->    </button>
         <!---->
         <!---->    <mat-divider></mat-divider>
         <!---->
-        <!---->    <button mat-button class="menu-button button-menu">
+        <!---->    <button mat-button class="menu-button button-menu" (click)="sideNavClose()">
         <!---->        <mat-icon class="icons-menu">help</mat-icon>
         <!---->        <span class="texts-menu">Help</span>
         <!---->    </button>

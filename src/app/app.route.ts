@@ -1,48 +1,79 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule, PreloadAllModules, NoPreloading  } from '@angular/router'
 
 export const ROUTES: Routes = [
+  //{ path: '',redirectTo: 'login', pathMatch: 'full' },
   {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    loadChildren: () => import('./page/login/login.module').then(m => m.LoginModule),
   },
   {
-    path: 'home',
-    loadChildren: () => import('./page/user/_home/_home.module').then(m => m.HomeModule) 
+    path: 'login',
+    loadChildren: () => import('./page/login/login.module').then(m => m.LoginModule),
   },
   {
-    path: 'angular-material-ui',
-    loadChildren: () => import('./component/angular-material-ui-component/angular-material-ui.module').then(m => m.AngularMaterialUIModule) 
+    path: 'feed',
+    loadChildren: () => import('./page/feed/feed.module').then(m => m.FeedModule),
+  },
+  {
+    path: 'learn-angular',
+    loadChildren: () => import('./page/learn-angular/learn-angular.module').then(m => m.LearnAngularModule),
+  },
+  {
+    path: 'components',
+    loadChildren: () => import('./shared/angular-material-ui-component/angular-material-ui.module').then(m => m.AngularMaterialUIModule),
   },
   {
     path: 'loading',
-    loadChildren: () => import('./component/loading/loading.module').then(m => m.LoadingModule) 
+    loadChildren: () => import('./shared/loading/loading.module').then(m => m.LoadingModule),
   },
   {
-    path: 'forbidden',
-    loadChildren: () => import('./component/erros/forbidden/forbidden.module').then(m => m.ForbiddenModule) 
-  },
-  {
-    path: 'unauthorized',
-    loadChildren: () => import('./component/erros/unauthorized/unauthorized.module').then(m => m.UnauthorizedModule) 
+    path: 'tutorial',
+    loadChildren: () => import('./page/tutorial/tutorial.module').then(m => m.TutorialModule),
   },
   {
     path: 'page-not-found',
-    loadChildren: () => import('./component/erros/notfound/notfound.module').then(m => m.PageNotFoundModule) 
+    loadChildren: () => import('./shared/erros/not-found/notfound.module').then(m => m.PageNotFoundModule) 
   },
   {
     path: '**',
     redirectTo: 'page-not-found'
   }
-];
-
+]
 
 @NgModule({
   imports: [
     RouterModule.forRoot(ROUTES, {
       scrollPositionRestoration: 'enabled',
-      preloadingStrategy: PreloadAllModules,
+
+      /**
+       * Build-in preloading strategies — Estratégias de pré-carregamento integradas
+       * NoPreloading -> (padrão) carrega conforme o usuario acessa a tela
+       * PreloadAllModules - > carrega todos os módulos em segundo plano
+       * 
+       * Custom preloading strategies - Estratégias de pré-carregamento personalizadas
+       * motivo:Se o número de módulos em seu aplicativo da web for grande
+       * exemplo:
+       * preloadingStrategy: CustomPreloadingStrategyService
+       * cria uma classe service CustomPreloadingStrategyService
+       * 
+       *import {Injectable} from '@angular/core';
+        import {PreloadingStrategy, Route} from '@angular/router';
+        import {Observable, of} from 'rxjs';
+        @Injectable({
+          providedIn: 'root'
+        })
+        export class CustomPreloadingStrategyService implements PreloadingStrategy {
+        preload(route: Route, fn: () => Observable<any>): Observable<any> {
+            if (route.data && route.data.preload) {
+              return fn();
+            }
+            return of(null);
+          }
+        }
+      */
+      preloadingStrategy: NoPreloading,
+
       relativeLinkResolution: 'legacy'
     })
   ],
